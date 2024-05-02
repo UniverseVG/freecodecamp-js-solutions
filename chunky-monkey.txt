@@ -1,0 +1,30 @@
+function chunkArrayInGroups(arr, size) {
+  let initialArr = []
+  let finalArr=[]
+  for(let i=0;i<arr.length;i++){
+    initialArr.push(arr[i])
+    if(initialArr.length === size){
+      finalArr.push(initialArr)
+      initialArr=[]
+    } else {
+      finalArr.push(initialArr)
+    }
+  }
+  return [...new Set(finalArr)];
+}
+
+console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2))
+
+// chunkArrayInGroups(["a", "b", "c", "d"], 2);
+
+
+function chunkArrayInGroups(arr, size) {
+    var result = [];
+    for (var i = 0; i < arr.length; i += size) {
+        result.push(arr.slice(i, i + size));
+    }
+    return result;
+}
+
+// Example usage:
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
