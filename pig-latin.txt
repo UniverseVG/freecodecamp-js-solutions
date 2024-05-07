@@ -1,0 +1,29 @@
+function translatePigLatin(str) {
+  let vowelRegex = /[aeiou]/gi;
+  let firstChar = str.charAt(0);
+  let appendStr = ""
+  let e =""
+  if(!vowelRegex.test(firstChar)){
+  for(let i=0;i<str.length;i++){
+    let tempChar = str.charAt(i)
+    if(vowelRegex.test(tempChar)){
+       break;
+      }else{
+        // console.log(str.slice(i+1,str.lenth))
+      // console.log(appendStr += str.slice(st+2,str.lenth))
+      //  console.log(appendStr += tempChar)
+      appendStr = str.split('').splice(i+1,str.length).join('') 
+      }
+      e += tempChar
+  }
+  appendStr = appendStr + e + 'ay'
+  }  
+  else{
+    appendStr = str + "way"
+  }
+    console.log(appendStr)
+  return appendStr
+ 
+}
+
+translatePigLatin("schwartz");

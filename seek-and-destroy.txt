@@ -1,0 +1,11 @@
+function destroyer(arr,...arg) {
+const tempArr = arr.reduce((acc,cu)=>{
+  if(!arg.includes(cu)){
+    acc.push(cu);
+  }
+  return acc
+},[])
+  return tempArr;
+}
+
+destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan");
